@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-[#0a0e13] text-slate-100 antialiased" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GO Finance - Orçamentos</title>
+<!-- Tailwind CSS v3 with Forms and Container-Queries Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#0a0e13',
+              sidebar: '#0d1218',
+              surface: '#12171e',
+              card: '#161c24',
+              cardHover: '#1c232d',
+              border: '#202936',
+              input: '#151b22',
+              emerald: '#22c55e',
+              emeraldDark: '#16a34a',
+              drawer: '#11161d',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Fira Code', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+<!-- Typography & Custom Theme Adjustments -->
+<style data-purpose="typography">
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+  </style>
+<style data-purpose="custom-scrollbar">
+    /* Subtle scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0a0e13;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #232c39;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #2d3848;
+    }
+  </style>
+</head>
+<body class="h-full overflow-hidden flex bg-[#0a0e13] text-slate-100">
+<!-- BEGIN: LeftSidebar -->
+<aside class="w-[218px] flex-shrink-0 bg-[#0c1015] border-r border-[#1e2632] flex flex-col justify-between select-none z-10" data-purpose="app-sidebar">
+<div class="flex flex-col">
+<!-- Logo Branding -->
+<div class="h-16 px-5 flex items-center gap-2.5 border-b border-[#18202b]" data-purpose="logo">
+<div class="w-7 h-7 rounded-lg bg-emerald-500 flex items-center justify-center font-bold text-slate-950 text-sm tracking-tight shadow-md shadow-emerald-500/20">
+          GO
+        </div>
+<span class="font-bold tracking-tight text-white text-[15px]">GO Finance</span>
+</div>
+<!-- Navigation Menu -->
+<nav aria-label="Menu Principal" class="p-3 space-y-1" data-purpose="main-nav">
+<!-- Dashboard -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 hover:bg-[#141b24] transition-colors group" href="#">
+<svg class="w-4 h-4 text-slate-500 group-hover:text-slate-300" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Dashboard</span>
+</a>
+<!-- Transações -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 hover:bg-[#141b24] transition-colors group" href="#">
+<svg class="w-4 h-4 text-slate-500 group-hover:text-slate-300" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Transações</span>
+</a>
+<!-- Orçamentos (ACTIVE) -->
+<a aria-current="page" class="flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium bg-[#162720] text-emerald-400 border border-emerald-500/20 shadow-sm" href="#">
+<svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Orçamentos</span>
+</a>
+<!-- Insights -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 hover:bg-[#141b24] transition-colors group" href="#">
+<svg class="w-4 h-4 text-slate-500 group-hover:text-slate-300" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Insights</span>
+</a>
+</nav>
+</div>
+<!-- Sidebar Bottom: Settings & User Profile -->
+<div class="p-3 border-t border-[#18202b] space-y-2.5" data-purpose="sidebar-footer">
+<a class="flex items-center gap-2.5 px-2 py-1.5 rounded-md text-xs text-slate-400 hover:text-slate-200 transition-colors" href="#">
+<svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Configurações</span>
+</a>
+<!-- User Widget -->
+<div class="flex items-center gap-2.5 px-2 py-2 rounded-lg bg-[#11171f] border border-[#1d2532]" data-purpose="user-profile">
+<img alt="Avatar de Gustavo Oliveira" class="w-8 h-8 rounded-full object-cover border border-slate-700" src="https://lh3.googleusercontent.com/aida/AEtjO1V-P_l0Z0aj06qTLYfG8xfUNyU-9ubbD_QLdAScXmnA4Od-nzF6KlWuUxe4uKi9x51RnnAvYWFNLiI9E4e3ejYZcHxXZqyqYWayxsdAAPK3cydUxJvchYV9-QvdMLaUueQ56sDN1RVfxeqC35DDopuOW58KNTZKWFv29EgAGKSewnRFEWUf8lsqHwZ2UCmkKa8h21ohSGJwd3VfEuv_8geLkOuajPtZMi3IsdNGv0KTKuamo27GtjCTJIg"/>
+<div class="overflow-hidden">
+<p class="text-xs font-medium text-white truncate">Gustavo Oliveira</p>
+<p class="text-[10px] text-slate-400 truncate">Conta pessoal</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- END: LeftSidebar -->
+<!-- BEGIN: MainContentArea (With Backdrop Overlay for Drawer) -->
+<div class="flex-1 flex relative overflow-hidden bg-[#0a0e13]">
+<!-- Main Scrollable Dashboard Content (Slightly dimmed under overlay) -->
+<main class="flex-1 overflow-y-auto px-8 py-6 max-w-[1020px] transition-opacity duration-300 opacity-80 filter blur-[0.3px]" data-purpose="budgets-main-view">
+<!-- Top Header Navigation / Action Bar -->
+<!-- BEGIN: HeaderSection -->
+<header class="flex items-center justify-between pb-6 border-b border-[#1b2330]" data-purpose="page-header">
+<div>
+<h1 class="text-2xl font-bold tracking-tight text-white">Orçamentos</h1>
+<p class="text-xs text-slate-400 mt-0.5">Planeje seus gastos e acompanhe seus limites mensais.</p>
+</div>
+<div class="flex items-center gap-3" data-purpose="header-actions">
+<!-- Month Dropdown -->
+<button class="flex items-center gap-2 bg-[#121820] hover:bg-[#18212c] text-xs font-medium text-slate-200 border border-[#232c3b] px-3 py-2 rounded-lg transition-colors" type="button">
+<svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M6.75 3v2.25M17.25 3v2.253 18.75m3 0a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5h15z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Setembro 2026</span>
+<svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M19.5 8.25l-7.5 7.5-7.5-7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Primary Button "+ Criar orçamento" -->
+<button class="flex items-center gap-1.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 px-3.5 py-2 rounded-lg text-xs font-semibold shadow-md shadow-emerald-950/30 transition-all" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M12 4.5v15m7.5-7.5h-15" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Criar orçamento</span>
+</button>
+</div>
+</header>
+<!-- END: HeaderSection -->
+<div class="mt-6 space-y-6">
+<!-- BEGIN: MonthlySummaryHighlightCard -->
+<section class="bg-[#10161f] border border-[#1e2735] rounded-xl p-5 shadow-sm" data-purpose="monthly-summary-card">
+<div class="flex items-start justify-between">
+<div>
+<p class="text-[11px] font-medium tracking-wider text-slate-400 uppercase">Orçamento mensal</p>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="text-3xl font-extrabold text-white tracking-tight">R$ 1.130,00</span>
+<span class="text-xs font-medium text-emerald-400">Você ainda pode gastar este mês</span>
+</div>
+</div>
+<!-- Current Status Badge -->
+<div class="flex items-center gap-2 bg-[#12241c] border border-emerald-500/30 px-3 py-1.5 rounded-full">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+</span>
+<span class="text-xs font-medium text-emerald-400">Dentro do orçamento</span>
+</div>
+</div>
+<!-- Overall Progress Bar -->
+<div class="mt-5 space-y-1.5">
+<div class="flex justify-between text-xs text-slate-300 font-medium">
+<span>70% utilizado</span>
+<span class="text-slate-400">R$ 2.670 de R$ 3.800</span>
+</div>
+<div class="w-full bg-[#1b232f] rounded-full h-2.5 overflow-hidden">
+<div class="bg-emerald-500 h-2.5 rounded-full" style="width: 70%;"></div>
+</div>
+</div>
+<!-- 3 Columns Breakdown Metrics -->
+<div class="grid grid-cols-3 gap-4 pt-5 mt-5 border-t border-[#1b2330]">
+<div class="space-y-0.5">
+<p class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Planejado</p>
+<p class="text-sm font-bold text-slate-200">R$ 3.800,00</p>
+</div>
+<div class="space-y-0.5">
+<p class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Gasto até agora</p>
+<p class="text-sm font-bold text-slate-200">R$ 2.670,00</p>
+</div>
+<div class="space-y-0.5">
+<p class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Disponível</p>
+<p class="text-sm font-bold text-emerald-400">R$ 1.130,00</p>
+</div>
+</div>
+</section>
+<!-- END: MonthlySummaryHighlightCard -->
+<!-- BEGIN: CategoryBudgetsSection -->
+<section data-purpose="category-budgets-grid">
+<!-- Section Title -->
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<h2 class="text-sm font-semibold text-white">Orçamentos por categoria</h2>
+<span class="bg-[#17202b] text-slate-400 text-[11px] font-medium px-2 py-0.5 rounded-full">6 categorias</span>
+</div>
+</div>
+<!-- 3-Column Responsive Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+<!-- Card 1: Alimentação (Normal / Emerald) -->
+<div class="bg-[#12171e] hover:bg-[#151c25] border border-[#1f2837] rounded-xl p-4 transition-colors flex flex-col justify-between" data-purpose="budget-card">
+<div>
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-[#192723] text-emerald-400 flex items-center justify-center border border-emerald-500/20">
+<!-- Fork & knife icon -->
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M8.25 3v7.5M12 3v7.5m0 0v10.5m-3.75-10.5h3.75m3.75-7.5v4.5a3 3 0 01-3 3v10.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<span class="text-xs font-semibold text-white">Alimentação</span>
+</div>
+<button class="text-slate-500 hover:text-slate-300 p-1" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><circle cx="12" cy="5" r="1.5"></circle><circle cx="12" cy="12" r="1.5"></circle><circle cx="12" cy="19" r="1.5"></circle></svg>
+</button>
+</div>
+<div class="flex items-baseline justify-between mb-1">
+<span class="text-base font-bold text-white">R$ 620,00</span>
+<span class="text-xs text-slate-400 font-medium">de R$ 900,00</span>
+</div>
+<!-- Progress -->
+<div class="w-full bg-[#1c2431] rounded-full h-1.5 overflow-hidden my-2.5">
+<div class="bg-emerald-500 h-1.5 rounded-full" style="width: 69%;"></div>
+</div>
+</div>
+<div class="flex items-center justify-between text-[11px] font-medium pt-2 border-t border-[#1a222e]">
+<span class="text-slate-400">69% utilizado</span>
+<span class="text-emerald-400">Disponível: R$ 280,00</span>
+</div>
+</div>
+<!-- Card 2: Transporte (Normal / Emerald) -->
+<div class="bg-[#12171e] hover:bg-[#151c25] border border-[#1f2837] rounded-xl p-4 transition-colors flex flex-col justify-between" data-purpose="budget-card">
+<div>
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-[#192723] text-emerald-400 flex items-center justify-center border border-emerald-500/20">
+<!-- Car icon -->
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H6.103c-.63 0-1.218.337-1.54.887L2.61 11.25" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<span class="text-xs font-semibold text-white">Transporte</span>
+</div>
+<button class="text-slate-500 hover:text-slate-300 p-1" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><circle cx="12" cy="5" r="1.5"></circle><circle cx="12" cy="12" r="1.5"></circle><circle cx="12" cy="19" r="1.5"></circle></svg>
+</button>
+</div>
+<div class="flex items-baseline justify-between mb-1">
+<span class="text-base font-bold text-white">R$ 310,00</span>
+<span class="text-xs text-slate-400 font-medium">de R$ 600,00</span>
+</div>
+<!-- Progress -->
+<div class="w-full bg-[#1c2431] rounded-full h-1.5 overflow-hidden my-2.5">
+<div class="bg-emerald-500 h-1.5 rounded-full" style="width: 52%;"></div>
+</div>
+</div>
+<div class="flex items-center justify-between text-[11px] font-medium pt-2 border-t border-[#1a222e]">
+<span class="text-slate-400">52% utilizado</span>
+<span class="text-emerald-400">Disponível: R$ 290,00</span>
+</div>
+</div>
+<!-- Card 3: Lazer (Atenção / Amarelo) -->
+<div class="bg-[#12171e] hover:bg-[#151c25] border border-[#1f2837] rounded-xl p-4 transition-colors flex flex-col justify-between" data-purpose="budget-card">
+<div>
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-[#2b2512] text-amber-400 flex items-center justify-center border border-amber-500/25">
+<!-- Ticket / Film icon -->
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-12v.75m0 3v.75m0 3v.75m0 3V18m-3-13.5h15a2.25 2.25 0 012.25 2.25v10.5A2.25 2.25 0 0119.5 19.5h-15A2.25 2.25 0 012.25 17.25V6.75A2.25 2.25 0 014.5 4.5z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<span class="text-xs font-semibold text-white">Lazer</span>
+</div>
+<button class="text-slate-500 hover:text-slate-300 p-1" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><circle cx="12" cy="5" r="1.5"></circle><circle cx="12" cy="12" r="1.5"></circle><circle cx="12" cy="19" r="1.5"></circle></svg>
+</button>
+</div>
+<div class="flex items-baseline justify-between mb-1">
+<span class="text-base font-bold text-white">R$ 420,00</span>
+<span class="text-xs text-slate-400 font-medium">de R$ 500,00</span>
+</div>
+<!-- Progress Amber -->
+<div class="w-full bg-[#1c2431] rounded-full h-1.5 overflow-hidden my-2.5">
+<div class="bg-amber-400 h-1.5 rounded-full" style="width: 84%;"></div>
+</div>
+</div>
+<div class="flex items-center justify-between text-[11px] font-medium pt-2 border-t border-[#1a222e]">
+<span class="text-amber-400">84% utilizado</span>
+<span class="text-slate-400">Disponível: R$ 80,00</span>
+</div>
+</div>
+<!-- Card 4: Saúde (Normal / Verde) -->
+<div class="bg-[#12171e] hover:bg-[#151c25] border border-[#1f2837] rounded-xl p-4 transition-colors flex flex-col justify-between" data-purpose="budget-card">
+<div>
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-[#192723] text-emerald-400 flex items-center justify-center border border-emerald-500/20">
+<!-- Heart / Pulse icon -->
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<span class="text-xs font-semibold text-white">Saúde</span>
+</div>
+<button class="text-slate-500 hover:text-slate-300 p-1" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><circle cx="12" cy="5" r="1.5"></circle><circle cx="12" cy="12" r="1.5"></circle><circle cx="12" cy="19" r="1.5"></circle></svg>
+</button>
+</div>
+<div class="flex items-baseline justify-between mb-1">
+<span class="text-base font-bold text-white">R$ 190,00</span>
+<span class="text-xs text-slate-400 font-medium">de R$ 350,00</span>
+</div>
+<!-- Progress -->
+<div class="w-full bg-[#1c2431] rounded-full h-1.5 overflow-hidden my-2.5">
+<div class="bg-emerald-500 h-1.5 rounded-full" style="width: 54%;"></div>
+</div>
+</div>
+<div class="flex items-center justify-between text-[11px] font-medium pt-2 border-t border-[#1a222e]">
+<span class="text-slate-400">54% utilizado</span>
+<span class="text-emerald-400">Disponível: R$ 160,00</span>
+</div>
+</div>
+<!-- Card 5: Educação (Atenção / Amarelo) -->
+<div class="bg-[#12171e] hover:bg-[#151c25] border border-[#1f2837] rounded-xl p-4 transition-colors flex flex-col justify-between" data-purpose="budget-card">
+<div>
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-[#2b2512] text-amber-400 flex items-center justify-center border border-amber-500/25">
+<!-- Book icon -->
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<span class="text-xs font-semibold text-white">Educação</span>
+</div>
+<button class="text-slate-500 hover:text-slate-300 p-1" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><circle cx="12" cy="5" r="1.5"></circle><circle cx="12" cy="12" r="1.5"></circle><circle cx="12" cy="19" r="1.5"></circle></svg>
+</button>
+</div>
+<div class="flex items-baseline justify-between mb-1">
+<span class="text-base font-bold text-white">R$ 550,00</span>
+<span class="text-xs text-slate-400 font-medium">de R$ 700,00</span>
+</div>
+<!-- Progress Amber -->
+<div class="w-full bg-[#1c2431] rounded-full h-1.5 overflow-hidden my-2.5">
+<div class="bg-amber-400 h-1.5 rounded-full" style="width: 79%;"></div>
+</div>
+</div>
+<div class="flex items-center justify-between text-[11px] font-medium pt-2 border-t border-[#1a222e]">
+<span class="text-amber-400">79% utilizado</span>
+<span class="text-slate-400">Disponível: R$ 150,00</span>
+</div>
+</div>
+<!-- Card 6: Compras (Ultrapassado / Vermelho) -->
+<div class="bg-[#12171e] hover:bg-[#151c25] border border-[#2a2228] rounded-xl p-4 transition-colors flex flex-col justify-between" data-purpose="budget-card">
+<div>
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-[#2a171b] text-red-400 flex items-center justify-center border border-red-500/25">
+<!-- Shopping Bag icon -->
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<span class="text-xs font-semibold text-white">Compras</span>
+</div>
+<button class="text-slate-500 hover:text-slate-300 p-1" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><circle cx="12" cy="5" r="1.5"></circle><circle cx="12" cy="12" r="1.5"></circle><circle cx="12" cy="19" r="1.5"></circle></svg>
+</button>
+</div>
+<div class="flex items-baseline justify-between mb-1">
+<span class="text-base font-bold text-red-400">R$ 580,00</span>
+<span class="text-xs text-slate-400 font-medium">de R$ 500,00</span>
+</div>
+<!-- Progress Red Full -->
+<div class="w-full bg-[#1c2431] rounded-full h-1.5 overflow-hidden my-2.5">
+<div class="bg-red-500 h-1.5 rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+<div class="flex items-center justify-between text-[11px] font-medium pt-2 border-t border-[#1a222e]">
+<span class="text-red-400 font-semibold">116% • Ultrapassado</span>
+<span class="text-red-400">R$ 80,00 acima</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: CategoryBudgetsSection -->
+<!-- BEGIN: MicroInsightBanner -->
+<aside class="bg-[#121720] border border-[#1d2737] rounded-xl px-4 py-3 flex items-center gap-3 shadow-sm" data-purpose="insight-banner">
+<div class="w-7 h-7 rounded-lg bg-[#1a2622] text-emerald-400 flex items-center justify-center flex-shrink-0">
+<!-- Sparkles/Lightbulb icon -->
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.516 0c.85.493 1.509 1.333 1.509 2.316V18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<p class="text-xs text-slate-300">
+<span class="text-white font-medium">Projeção favorável:</span> Se mantiver o ritmo atual, você deve terminar o mês dentro do orçamento planejado.
+          </p>
+</aside>
+<!-- END: MicroInsightBanner -->
+</div>
+</main>
+<!-- Overlay Backdrop (identical dark shade to {{DATA:SCREEN:SCREEN_2}}) -->
+<div class="absolute inset-0 bg-black/40 pointer-events-none" data-purpose="drawer-backdrop"></div>
+<!-- BEGIN: CreateBudgetDrawer -->
+<!-- Drawer Container matching SCREEN_2 'Nova transação' visual styling -->
+<aside class="relative z-20 w-[420px] bg-[#10141a] border-l border-[#1d2532] shadow-2xl flex flex-col justify-between h-full" data-purpose="budget-drawer">
+<!-- Drawer Header -->
+<div class="p-6 border-b border-[#18202a] flex items-start justify-between">
+<div>
+<h2 class="text-lg font-bold text-white tracking-tight">Criar orçamento</h2>
+<p class="text-xs text-slate-400 mt-0.5">Defina quanto deseja gastar em uma categoria.</p>
+</div>
+<button aria-label="Fechar" class="text-slate-400 hover:text-slate-200 p-1 rounded-md transition-colors" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<!-- Drawer Body: Form Inputs -->
+<div class="flex-1 overflow-y-auto p-6 space-y-5" data-purpose="drawer-form-content">
+<!-- Field: Category Selection -->
+<div class="space-y-1.5">
+<label class="block text-xs font-medium text-slate-300" for="budget-category">Categoria</label>
+<div class="relative">
+<select class="w-full bg-[#141a22] border border-[#232d3b] text-white text-xs rounded-lg py-2.5 px-3 appearance-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors cursor-pointer" id="budget-category">
+<option disabled="" selected="" value="">Selecionar categoria</option>
+<option value="alimentacao">Alimentação</option>
+<option value="transporte">Transporte</option>
+<option value="moradia">Moradia</option>
+<option value="saude">Saúde</option>
+<option value="educacao">Educação</option>
+<option value="lazer">Lazer</option>
+<option value="assinaturas">Assinaturas</option>
+<option value="compras">Compras</option>
+<option value="outros">Outros</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-slate-400">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M19.5 8.25l-7.5 7.5-7.5-7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+</div>
+<!-- Highlight Box: VALOR DO LIMITE MENSAL (Exact styling from SCREEN_2 'VALOR DO LANÇAMENTO') -->
+<div class="bg-[#121820] border border-[#202a38] rounded-xl p-4 space-y-2 focus-within:border-emerald-500/60 transition-colors" data-purpose="amount-highlight-box">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Limite Mensal</span>
+<span class="inline-flex items-center gap-1.5 text-[11px] font-medium text-emerald-400">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              Ativo
+            </span>
+</div>
+<div class="flex items-baseline">
+<span class="text-2xl font-bold font-mono text-emerald-400 tracking-tight">R$ 0,00</span>
+</div>
+</div>
+<!-- Auxiliary Reference Card: Recent Average Spending -->
+<div class="bg-[#131922] border border-[#1f2837] rounded-lg p-3 flex items-center justify-between text-xs" data-purpose="auxiliary-spending-info">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-[#1b2520] text-emerald-400 flex items-center justify-center">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<span class="text-slate-400">Gasto médio recente:</span>
+</div>
+<span class="font-semibold text-slate-200">R$ 740,00/mês</span>
+</div>
+<!-- Field: Mês de referência -->
+<div class="space-y-1.5">
+<label class="block text-xs font-medium text-slate-300" for="reference-month">Mês de referência</label>
+<div class="relative">
+<input class="w-full bg-[#141a22] border border-[#232d3b] text-white text-xs rounded-lg py-2.5 px-3 pr-10 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 cursor-default" id="reference-month" readonly="" type="text" value="Setembro 2026"/>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-slate-400">
+<svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M6.75 3v2.25M17.25 3v2.253 18.75m3 0a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5h15z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+</div>
+<!-- Field: Notificações de alerta -->
+<div class="pt-2 border-t border-[#1a222e]">
+<div class="flex items-center justify-between">
+<div class="space-y-0.5">
+<p class="text-xs font-medium text-slate-200">Alertar aos 80%</p>
+<p class="text-[11px] text-slate-400">Receba um aviso antes de atingir o teto</p>
+</div>
+<!-- Toggle switch -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-[#1f2837] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-emerald-500"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Drawer Footer -->
+<!-- BEGIN: DrawerFooter -->
+<footer class="p-4 border-t border-[#18202a] bg-[#0d1117] flex items-center justify-end gap-3" data-purpose="drawer-action-buttons">
+<button class="px-4 py-2 text-xs font-medium text-slate-400 hover:text-white transition-colors" type="button">
+          Cancelar
+        </button>
+<button class="px-4 py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-semibold rounded-lg shadow-sm transition-all focus:ring-2 focus:ring-emerald-400/50" type="button">
+          Criar orçamento
+        </button>
+</footer>
+<!-- END: DrawerFooter -->
+</aside>
+<!-- END: CreateBudgetDrawer -->
+</div>
+<!-- END: MainContentArea -->
+</body></html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#101419;color:#e0e2ea;}body{overscroll-behavior:none;font-family:'Geist',sans-serif;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-secondary":"#003919","inverse-primary":"#006e2f","inverse-surface":"#e0e2ea","tertiary-container":"#daa300","primary-container":"#22c55e","inverse-on-surface":"#2d3136","on-tertiary":"#402d00","secondary":"#4de082","on-error-container":"#ffdad6","on-secondary-container":"#003e1c","tertiary":"#fabe22","surface-variant":"#31353b","on-surface-variant":"#bccbb9","error":"#ffb4ab","error-container":"#93000a","secondary-fixed":"#6dfe9c","tertiary-fixed-dim":"#f9bd22","tertiary-fixed":"#ffdf9f","secondary-container":"#00b55d","surface-container-low":"#181c21","primary":"#4be277","on-tertiary-fixed-variant":"#5c4300","surface-container-lowest":"#0a0e13","on-tertiary-container":"#533c00","on-primary-fixed-variant":"#005321","on-tertiary-fixed":"#261a00","on-primary-fixed":"#002109","on-primary":"#003915","surface-tint":"#4ae176","on-secondary-fixed":"#00210c","on-surface":"#e0e2ea","on-primary-container":"#004b1e","surface-container":"#1c2025","primary-fixed":"#6bff8f","background":"#101419","surface-container-high":"#262a30","surface-bright":"#36393f","on-secondary-fixed-variant":"#005227","surface":"#101419","outline-variant":"#3d4a3d","primary-fixed-dim":"#4ae176","on-background":"#e0e2ea","surface-container-highest":"#31353b","outline":"#869585","surface-dim":"#101419","on-error":"#690005","secondary-fixed-dim":"#4de082"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-sm":"0.5rem","grid-gutter":"1rem","space-2xl":"2rem","container-padding":"1.5rem","space-lg":"1.25rem","space-2xs":"0.125rem","space-xs":"0.25rem","space-base":"1rem","space-3xl":"3rem","space-xl":"1.5rem","space-md":"0.75rem"},"fontFamily":{"headline-lg-mobile":["geist"],"body-lg":["geist"],"headline-lg":["geist"],"body-sm":["geist"],"headline-sm":["geist"],"display-mobile":["geist"],"headline-md":["geist"],"mono-metric-md":["jetbrainsMono"],"mono-metric-lg":["jetbrainsMono"],"display":["geist"],"label-caps":["geist"],"body-md":["geist"]},"fontSize":{"headline-lg-mobile":["22px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-lg":["15px",{"lineHeight":"22px","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-lg":["28px",{"lineHeight":"34px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"400"}],"headline-sm":["16px",{"lineHeight":"22px","letterSpacing":"-0.01em","fontWeight":"500"}],"display-mobile":["30px",{"lineHeight":"36px","letterSpacing":"-0.025em","fontWeight":"600"}],"headline-md":["20px",{"lineHeight":"26px","letterSpacing":"-0.015em","fontWeight":"500"}],"mono-metric-md":["14px",{"lineHeight":"18px","letterSpacing":"-0.01em","fontWeight":"500"}],"mono-metric-lg":["24px",{"lineHeight":"28px","letterSpacing":"-0.02em","fontWeight":"500"}],"display":["40px",{"lineHeight":"48px","letterSpacing":"-0.03em","fontWeight":"600"}],"label-caps":["11px",{"lineHeight":"14px","letterSpacing":"0.05em","fontWeight":"600"}],"body-md":["13px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"400"}]}}}}</script></head><body class="bg-surface text-on-surface min-h-screen flex flex-col antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-base flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="Brand logo. - Primary color: #22c55e
+- Font: geist
+- Mode: dark
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XE_06HUgdQHlts2K83DZPcE9f5i6JKLa1g2mPlouo51uF77LxXz7Jm4_kwVPWFc43C3TUzgJ0KMFVL9IJIJkBBQfbfi9LnH9zEC5Mmh8BEwKgOUuiZoqIMXjS87Pd0c9Z6kkahQMdmuEy3EsS5-cz3x6pKVn5FNysuWAvGNmyRZFBRA_8a3Cahvt2y3SM8J7E8A-O26tnIpKEtmt2TKWJmX3iqPzuzwBkTA-m5_5AKF3A3NPGXbgFuFQg"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-semibold">GO Finance</span></div><div class="flex items-center gap-space-xs"><button aria-label="Notificações" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span></button><button aria-label="Perfil do usuário" class="w-11 h-11 flex items-center justify-center rounded-full"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant/30" src="https://lh3.googleusercontent.com/aida/AEtjO1V-P_l0Z0aj06qTLYfG8xfUNyU-9ubbD_QLdAScXmnA4Od-nzF6KlWuUxe4uKi9x51RnnAvYWFNLiI9E4e3ejYZcHxXZqyqYWayxsdAAPK3cydUxJvchYV9-QvdMLaUueQ56sDN1RVfxeqC35DDopuOW58KNTZKWFv29EgAGKSewnRFEWUf8lsqHwZ2UCmkKa8h21ohSGJwd3VfEuv_8geLkOuajPtZMi3IsdNGv0KTKuamo27GtjCTJIg"/></button></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full px-space-base gap-space-lg relative select-none">
+<!-- 1. Greeting & Period Selector -->
+<header class="flex items-center justify-between pt-space-xs">
+<div class="flex flex-col">
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight flex items-center gap-1.5 font-semibold">
+        Olá, Gustavo <span class="text-xl">👋</span>
+</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Aqui está seu mês até agora.</p>
+</div>
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface transition-colors active:scale-95 text-body-sm font-medium" type="button">
+<span>Setembro 2026</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">keyboard_arrow_down</span>
+</button>
+</header>
+<!-- 2. Main Consolidated Balance Card -->
+<section class="bg-surface-container rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Saldo do mês</span>
+<div class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>
+<span class="font-mono-metric-md text-[11px] font-semibold">14,2% vs. anterior</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-display-mobile text-display-mobile text-on-surface font-semibold tracking-tight">R$ 2.340,50</span>
+</div>
+<!-- Metrics Split -->
+<div class="grid grid-cols-2 gap-3 pt-space-xs">
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-0.5">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Receitas</span>
+</div>
+<span class="font-mono-metric-md text-mono-metric-md text-on-surface font-medium">R$ 5.800,00</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-0.5">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-error inline-block"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Despesas</span>
+</div>
+<span class="font-mono-metric-md text-mono-metric-md text-on-surface font-medium">R$ 3.459,50</span>
+</div>
+</div>
+</section>
+<!-- 3. Primary Action Button -->
+<button class="w-full h-13 py-3.5 px-space-base bg-primary hover:bg-secondary text-on-primary font-semibold rounded-xl flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-transform" id="open-sheet-btn" type="button">
+<span class="material-symbols-outlined text-[20px] font-bold">add</span>
+<span class="font-headline-sm text-headline-sm">Nova transação</span>
+</button>
+<!-- 4. Monthly Budget Card -->
+<section class="bg-surface-container rounded-xl p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Orçamento do mês</h2>
+<a class="font-body-sm text-body-sm text-primary flex items-center gap-0.5 hover:underline" href="#">
+        Ver orçamentos <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-mono-metric-md text-mono-metric-md text-on-surface font-semibold">70% utilizado</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">R$ 2.670 de R$ 3.800</span>
+</div>
+<!-- Progress Track -->
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-500" style="width: 70%;"></div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-body-md text-body-md text-on-surface font-medium">R$ 1.130 disponível</span>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/10">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-body-sm text-body-sm text-primary font-medium">Dentro do orçamento</span>
+</div>
+</div>
+</section>
+<!-- 5. Fluxo Financeiro (SVG Area/Bar Hybrid Minimal Chart) -->
+<section class="bg-surface-container rounded-xl p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Fluxo financeiro</h2>
+<span class="text-on-surface-variant font-body-sm text-body-sm">(6 meses)</span>
+</div>
+<a class="font-body-sm text-body-sm text-primary flex items-center gap-0.5 hover:underline" href="#">
+        Ver detalhes <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<!-- Chart Canvas -->
+<div class="w-full pt-2 flex flex-col gap-2">
+<div class="h-32 w-full relative flex items-end">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 320 120">
+<defs>
+<lineargradient id="primaryFlow" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#22c55e" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#22c55e" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Grid reference lines -->
+<line stroke="#31353b" stroke-dasharray="2 4" stroke-width="1" x1="0" x2="320" y1="20" y2="20"></line>
+<line stroke="#31353b" stroke-dasharray="2 4" stroke-width="1" x1="0" x2="320" y1="65" y2="65"></line>
+<line stroke="#31353b" stroke-width="1" x1="0" x2="320" y1="110" y2="110"></line>
+<!-- Receitas Area Curve -->
+<path d="M 10 70 Q 60 55 110 50 T 210 35 T 310 20 L 310 110 L 10 110 Z" fill="url(#primaryFlow)"></path>
+<path d="M 10 70 Q 60 55 110 50 T 210 35 T 310 20" fill="none" stroke="#22c55e" stroke-width="2.5"></path>
+<!-- Despesas Line Curve -->
+<path d="M 10 85 Q 60 80 110 72 T 210 68 T 310 58" fill="none" stroke="#ffb4ab" stroke-dasharray="3 3" stroke-width="2"></path>
+<!-- Selected Month Highlight Dot -->
+<circle cx="310" cy="20" fill="#22c55e" r="4"></circle>
+<circle cx="310" cy="58" fill="#ffb4ab" r="3.5"></circle>
+</svg>
+</div>
+<!-- Chart Labels -->
+<div class="flex justify-between items-center text-on-surface-variant font-mono-metric-md text-[11px] px-1 pt-1">
+<span>Abr</span>
+<span>Mai</span>
+<span>Jun</span>
+<span>Jul</span>
+<span>Ago</span>
+<span class="text-primary font-semibold">Set</span>
+</div>
+<!-- Legend -->
+<div class="flex items-center justify-center gap-4 pt-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-1 rounded-full bg-primary"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Receitas</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-1 rounded-full bg-error"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Despesas</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. Maiores Gastos (Gastos por Categoria - Top 3) -->
+<section class="bg-surface-container rounded-xl p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Maiores gastos</h2>
+<a class="font-body-sm text-body-sm text-primary flex items-center gap-0.5 hover:underline" href="#">
+        Ver todas <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- Cat 1 -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[16px]">restaurant</span>
+</div>
+<span class="font-body-md text-body-md font-medium text-on-surface">Alimentação</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">24%</span>
+<span class="font-mono-metric-md text-mono-metric-md text-on-surface font-semibold">R$ 820,00</span>
+</div>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 24%;"></div>
+</div>
+</div>
+<!-- Cat 2 -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[16px]">directions_car</span>
+</div>
+<span class="font-body-md text-body-md font-medium text-on-surface">Transporte</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">18%</span>
+<span class="font-mono-metric-md text-mono-metric-md text-on-surface font-semibold">R$ 610,00</span>
+</div>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 18%;"></div>
+</div>
+</div>
+<!-- Cat 3 -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[16px]">school</span>
+</div>
+<span class="font-body-md text-body-md font-medium text-on-surface">Educação</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">16%</span>
+<span class="font-mono-metric-md text-mono-metric-md text-on-surface font-semibold">R$ 550,00</span>
+</div>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 16%;"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. Últimas Transações (Recent Transactions List) -->
+<section class="bg-surface-container rounded-xl p-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-1">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Últimas transações</h2>
+<a class="font-body-sm text-body-sm text-primary flex items-center gap-0.5 hover:underline" href="#">
+        Ver todas <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<div class="flex flex-col">
+<!-- Item 1 -->
+<div class="flex items-center justify-between py-2.5 border-b-0">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[20px]">local_mall</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-on-surface">Mercado do Bairro</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Alimentação • Hoje</span>
+</div>
+</div>
+<span class="font-mono-metric-md text-mono-metric-md text-on-surface font-medium">- R$ 237,80</span>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between py-2.5 border-b-0">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[20px]">fitness_center</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-on-surface">Academia</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Saúde • Hoje</span>
+</div>
+</div>
+<span class="font-mono-metric-md text-mono-metric-md text-on-surface font-medium">- R$ 189,90</span>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center justify-between py-2.5 border-b-0">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-on-surface">Salário</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Receita • 01 set</span>
+</div>
+</div>
+<span class="font-mono-metric-md text-mono-metric-md text-primary font-semibold">+ R$ 4.500,00</span>
+</div>
+<!-- Item 4 -->
+<div class="flex items-center justify-between py-2.5 border-b-0">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[20px]">local_taxi</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-on-surface">Uber</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Transporte • 30 ago</span>
+</div>
+</div>
+<span class="font-mono-metric-md text-mono-metric-md text-on-surface font-medium">- R$ 42,80</span>
+</div>
+</div>
+</section>
+<!-- 8. GO Insight Card -->
+<section class="bg-surface-container rounded-xl p-space-lg flex flex-col gap-2 relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-primary/15 text-primary">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider">GO Insight</span>
+</div>
+<a class="font-body-sm text-body-sm text-primary flex items-center gap-0.5 hover:underline" href="#">
+        Ver insights <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<div class="pt-1 flex flex-col gap-0.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-snug">Seus gastos diminuíram 12% este mês.</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Você gastou R$ 418 a menos que em agosto.</p>
+</div>
+</section>
+<!-- 9. Interactive Bottom Sheet: "Nova transação" -->
+<div class="fixed inset-0 z-50 flex flex-col justify-end bg-black/70 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none" id="transaction-sheet">
+<div class="absolute inset-0" id="sheet-backdrop"></div>
+<div class="relative w-full bg-surface-container rounded-t-2xl shadow-xl flex flex-col max-h-[88vh] overflow-y-auto px-space-base pt-3 pb-8 gap-space-md transform translate-y-full transition-transform duration-300">
+<!-- Drag Handle -->
+<div class="w-10 h-1 rounded-full bg-surface-variant self-center mb-1"></div>
+<!-- Header -->
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold">Nova transação</h2>
+<button class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors active:scale-95" id="close-sheet-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Segmented Control: [ Despesa ] [ Receita ] -->
+<div class="grid grid-cols-2 p-1 bg-surface-container-low rounded-xl">
+<button class="py-2 rounded-lg bg-surface-container-high text-on-surface font-body-md text-body-md font-semibold text-center transition-colors" id="tab-despesa" type="button">
+          Despesa
+        </button>
+<button class="py-2 rounded-lg text-on-surface-variant hover:text-on-surface font-body-md text-body-md font-medium text-center transition-colors" id="tab-receita" type="button">
+          Receita
+        </button>
+</div>
+<!-- Value Input Prominent Container -->
+<div class="flex flex-col items-center justify-center py-4 bg-surface-container-low rounded-xl gap-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant tracking-wider uppercase">Valor do lançamento</span>
+<div class="flex items-center justify-center">
+<input class="w-full bg-transparent text-center font-display-mobile text-display-mobile text-primary font-bold focus:outline-none placeholder-primary" type="text" value="R$ 0,00"/>
+</div>
+</div>
+<!-- Form Inputs List -->
+<div class="flex flex-col gap-3">
+<!-- Descrição -->
+<div class="flex flex-col gap-1">
+<label class="font-body-sm text-body-sm text-on-surface-variant font-medium">Descrição</label>
+<div class="h-11 px-3 bg-surface-container-low rounded-xl flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">edit</span>
+<input class="bg-transparent w-full text-on-surface placeholder:text-on-surface-variant/50 font-body-md text-body-md focus:outline-none" placeholder="Ex: Supermercado" type="text"/>
+</div>
+</div>
+<!-- Categoria -->
+<div class="flex flex-col gap-1">
+<label class="font-body-sm text-body-sm text-on-surface-variant font-medium">Categoria</label>
+<button class="h-11 px-3 bg-surface-container-low rounded-xl flex items-center justify-between text-on-surface" type="button">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">category</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Selecionar categoria</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">chevron_right</span>
+</button>
+</div>
+<!-- Data -->
+<div class="flex flex-col gap-1">
+<label class="font-body-sm text-body-sm text-on-surface-variant font-medium">Data</label>
+<button class="h-11 px-3 bg-surface-container-low rounded-xl flex items-center justify-between text-on-surface" type="button">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">calendar_today</span>
+<span class="font-body-md text-body-md text-on-surface">Hoje, 18 Set 2026</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">expand_more</span>
+</button>
+</div>
+<!-- Conta / Pagamento -->
+<div class="flex flex-col gap-1">
+<label class="font-body-sm text-body-sm text-on-surface-variant font-medium">Conta / Pagamento</label>
+<button class="h-11 px-3 bg-surface-container-low rounded-xl flex items-center justify-between text-on-surface" type="button">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">credit_card</span>
+<span class="font-body-md text-body-md text-on-surface">Nubank Conta Principal</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Bottom Sheet Action Buttons -->
+<div class="flex items-center gap-2.5 pt-2">
+<button class="flex-1 h-12 rounded-xl bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-lg text-body-lg font-medium transition-colors active:scale-95" id="cancel-sheet-btn" type="button">
+          Cancelar
+        </button>
+<button class="flex-[1.5] h-12 rounded-xl bg-primary hover:bg-secondary text-on-primary font-body-lg text-body-lg font-semibold shadow-sm transition-all active:scale-95" id="confirm-sheet-btn" type="button">
+          Adicionar transação
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const openBtn = document.getElementById('open-sheet-btn');
+    const closeBtn = document.getElementById('close-sheet-btn');
+    const cancelBtn = document.getElementById('cancel-sheet-btn');
+    const confirmBtn = document.getElementById('confirm-sheet-btn');
+    const backdrop = document.getElementById('sheet-backdrop');
+    const sheet = document.getElementById('transaction-sheet');
+    const sheetPanel = sheet?.querySelector('.relative');
+
+    const tabDespesa = document.getElementById('tab-despesa');
+    const tabReceita = document.getElementById('tab-receita');
+
+    function openModal() {
+      if (!sheet || !sheetPanel) return;
+      sheet.classList.remove('opacity-0', 'pointer-events-none');
+      sheet.classList.add('opacity-100', 'pointer-events-auto');
+      sheetPanel.classList.remove('translate-y-full');
+      sheetPanel.classList.add('translate-y-0');
+    }
+
+    function closeModal() {
+      if (!sheet || !sheetPanel) return;
+      sheet.classList.remove('opacity-100', 'pointer-events-auto');
+      sheet.classList.add('opacity-0', 'pointer-events-none');
+      sheetPanel.classList.remove('translate-y-0');
+      sheetPanel.classList.add('translate-y-full');
+    }
+
+    openBtn?.addEventListener('click', openModal);
+    closeBtn?.addEventListener('click', closeModal);
+    cancelBtn?.addEventListener('click', closeModal);
+    backdrop?.addEventListener('click', closeModal);
+    confirmBtn?.addEventListener('click', closeModal);
+
+    // Segmented Control Toggle
+    tabDespesa?.addEventListener('click', () => {
+      tabDespesa.classList.add('bg-surface-container-high', 'text-on-surface', 'font-semibold');
+      tabDespesa.classList.remove('text-on-surface-variant');
+      tabReceita?.classList.remove('bg-surface-container-high', 'text-on-surface', 'font-semibold');
+      tabReceita?.classList.add('text-on-surface-variant');
+    });
+
+    tabReceita?.addEventListener('click', () => {
+      tabReceita.classList.add('bg-surface-container-high', 'text-on-surface', 'font-semibold');
+      tabReceita.classList.remove('text-on-surface-variant');
+      tabDespesa?.classList.remove('bg-surface-container-high', 'text-on-surface', 'font-semibold');
+      tabDespesa?.classList.add('text-on-surface-variant');
+    });
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-low/90 backdrop-blur-xl shadow-[0_-1px_12px_rgba(0,0,0,0.3)]" data-active-classes="text-primary font-medium"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center min-w-[64px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="inicio" href="#"><span class="material-symbols-outlined text-[24px]">dashboard</span><span class="font-body-sm text-body-sm tracking-tight">Início</span></a><a class="flex flex-col items-center justify-center min-w-[64px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="transacoes" href="#"><span class="material-symbols-outlined text-[24px]">swap_horiz</span><span class="font-body-sm text-body-sm tracking-tight">Transações</span></a><a class="flex flex-col items-center justify-center min-w-[64px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="orcamentos" href="#"><span class="material-symbols-outlined text-[24px]">pie_chart</span><span class="font-body-sm text-body-sm tracking-tight">Orçamentos</span></a><a class="flex flex-col items-center justify-center min-w-[64px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="insights" href="#"><span class="material-symbols-outlined text-[24px]">monitoring</span><span class="font-body-sm text-body-sm tracking-tight">Insights</span></a></div></nav></body></html>

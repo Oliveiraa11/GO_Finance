@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-canvas: #0b0f14;
+  --color-surface: #121820;
+  --color-surface-interactive: #171e27;
+  --color-border: #222b36;
+  --color-border-strong: #2e3a49;
+  --color-primary: #22c55e;
+  --color-primary-soft: #4ade80;
+  --color-text: #f8fafc;
+  --color-muted: #94a3b8;
+  --color-danger: #f87171;
+  --color-warning: #fbbf24;
+  --font-sans: 'Geist', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --radius-card: 14px;
+  --radius-control: 8px;
+}
+
+:root {
+  color: var(--color-text);
+  background: var(--color-canvas);
+  font-family: var(--font-sans);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+html { background: var(--color-canvas); }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+button, input, select { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+.tabular { font-family: var(--font-mono); font-feature-settings: 'tnum' 1; }
+.focus-ring:focus-visible { outline: 1px solid var(--color-primary); outline-offset: 2px; }

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=geist:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"outline-variant":"#3d4a3d","inverse-surface":"#e0e2ea","surface":"#101419","on-tertiary-container":"#533c00","surface-container-low":"#181c21","on-primary":"#003915","tertiary-fixed-dim":"#f9bd22","on-primary-container":"#004b1e","tertiary":"#fabe22","secondary":"#4de082","tertiary-container":"#daa300","surface-tint":"#4ae176","primary-fixed-dim":"#4ae176","error-container":"#93000a","primary-container":"#22c55e","surface-container-lowest":"#0a0e13","surface-dim":"#101419","tertiary-fixed":"#ffdf9f","on-primary-fixed":"#002109","on-background":"#e0e2ea","secondary-fixed-dim":"#4de082","on-secondary-fixed":"#00210c","outline":"#869585","inverse-on-surface":"#2d3136","surface-container":"#1c2025","on-error":"#690005","on-secondary-container":"#003e1c","on-primary-fixed-variant":"#005321","on-secondary":"#003919","surface-container-high":"#262a30","surface-variant":"#31353b","on-tertiary-fixed-variant":"#5c4300","on-tertiary-fixed":"#261a00","surface-container-highest":"#31353b","on-tertiary":"#402d00","on-error-container":"#ffdad6","background":"#101419","on-secondary-fixed-variant":"#005227","on-surface":"#e0e2ea","primary":"#4be277","surface-bright":"#36393f","secondary-container":"#00b55d","inverse-primary":"#006e2f","secondary-fixed":"#6dfe9c","error":"#ffb4ab","primary-fixed":"#6bff8f","on-surface-variant":"#bccbb9"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xl":"1.5rem","space-xs":"0.25rem","space-3xl":"3rem","grid-gutter":"1rem","space-sm":"0.5rem","space-base":"1rem","space-lg":"1.25rem","space-md":"0.75rem","space-2xl":"2rem","space-2xs":"0.125rem","container-padding":"1.5rem"},"fontFamily":{"headline-lg":["geist"],"body-sm":["geist"],"headline-md":["geist"],"mono-metric-md":["jetbrainsMono"],"label-caps":["geist"],"headline-lg-mobile":["geist"],"mono-metric-lg":["jetbrainsMono"],"display-mobile":["geist"],"body-lg":["geist"],"body-md":["geist"],"headline-sm":["geist"],"display":["geist"]},"fontSize":{"headline-lg":["28px",{"lineHeight":"34px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"26px","letterSpacing":"-0.015em","fontWeight":"500"}],"mono-metric-md":["14px",{"lineHeight":"18px","letterSpacing":"-0.01em","fontWeight":"500"}],"label-caps":["11px",{"lineHeight":"14px","letterSpacing":"0.05em","fontWeight":"600"}],"headline-lg-mobile":["22px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"600"}],"mono-metric-lg":["24px",{"lineHeight":"28px","letterSpacing":"-0.02em","fontWeight":"500"}],"display-mobile":["30px",{"lineHeight":"36px","letterSpacing":"-0.025em","fontWeight":"600"}],"body-lg":["15px",{"lineHeight":"22px","letterSpacing":"-0.005em","fontWeight":"400"}],"body-md":["13px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"400"}],"headline-sm":["16px",{"lineHeight":"22px","letterSpacing":"-0.01em","fontWeight":"500"}],"display":["40px",{"lineHeight":"48px","letterSpacing":"-0.03em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between p-space-lg border-r border-surface-variant"><div class="flex flex-col gap-space-xl"><div class="flex items-center gap-space-sm px-space-xs"><img alt="GO Finance Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XE_06HUgdQHlts2K83DZPcE9f5i6JKLa1g2mPlouo51uF77LxXz7Jm4_kwVPWFc43C3TUzgJ0KMFVL9IJIJkBBQfbfi9LnH9zEC5Mmh8BEwKgOUuiZoqIMXjS87Pd0c9Z6kkahQMdmuEy3EsS5-cz3x6pKVn5FNysuWAvGNmyRZFBRA_8a3Cahvt2y3SM8J7E8A-O26tnIpKEtmt2TKWJmX3iqPzuzwBkTA-m5_5AKF3A3NPGXbgFuFQg"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-semibold">GO Finance</span></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-medium rounded-lg"><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm transition-colors bg-primary-container text-on-primary-container font-medium rounded-lg" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-body-md text-body-md">Dashboard</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="transacoes" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span class="font-body-md text-body-md">Transações</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="orcamentos" href="#"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span class="font-body-md text-body-md">Orçamentos</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="insights" href="#"><span class="material-symbols-outlined text-[20px]">auto_awesome</span><span class="font-body-md text-body-md">Insights</span></a></nav></div><div class="flex flex-col gap-space-md pt-space-md border-t border-surface-variant"><nav class="flex flex-col" data-active-classes="bg-primary-container text-on-primary-container font-medium rounded-lg"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="configuracoes" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-body-md text-body-md">Configurações</span></a></nav><div class="flex items-center gap-space-md p-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKtnP3LcQaJ1d0oGw4feMZ3NUmj6i0CVa_SsgPyxgEkk7f6xzRblAXE6x276v8C3u9000kjrsmUw7c3pBIiRZH6mCvajK7YOAVD-gVUYEE4WZ1PCMVINyC3CUeSO47dvGF6MDdMtQfGRFPwfdP91PE-AWNx2UxkgX0ttD-LgVytohp-aQwAzZf8QkP4c2KcpBdVPxXJlWTWoPjpWwBsWfiriJdsHAHggCwGz4kAKnsATANMhFx-led"/><div class="flex flex-col min-w-0 flex-1"><span class="font-body-md text-body-md text-on-surface truncate font-medium">Gustavo Oliveira</span><span class="font-body-sm text-body-sm text-on-surface-variant truncate">Conta pessoal</span></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-20 bg-surface/90 backdrop-blur-md z-40 border-b border-surface-variant px-space-xl flex items-center justify-between"><div class="flex items-center gap-space-md"><img alt="GO Finance Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XE_06HUgdQHlts2K83DZPcE9f5i6JKLa1g2mPlouo51uF77LxXz7Jm4_kwVPWFc43C3TUzgJ0KMFVL9IJIJkBBQfbfi9LnH9zEC5Mmh8BEwKgOUuiZoqIMXjS87Pd0c9Z6kkahQMdmuEy3EsS5-cz3x6pKVn5FNysuWAvGNmyRZFBRA_8a3Cahvt2y3SM8J7E8A-O26tnIpKEtmt2TKWJmX3iqPzuzwBkTA-m5_5AKF3A3NPGXbgFuFQg"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Olá, Gustavo 👋</span><span class="font-body-sm text-body-sm text-on-surface-variant">Aqui está o resumo das suas finanças.</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-surface-container-high border border-surface-variant text-on-surface font-body-sm text-body-sm"><span class="material-symbols-outlined text-[16px] text-on-surface-variant">calendar_today</span><span>Setembro 2026</span></div><button class="relative p-space-xs rounded-lg bg-surface-container-high hover:bg-surface-container-highest border border-surface-variant text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary"></span></button><button class="flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-primary-container hover:bg-primary text-on-primary font-body-md text-body-md font-semibold transition-all transform active:scale-95" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>Nova Ação</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover shrink-0 ml-space-xs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKtnP3LcQaJ1d0oGw4feMZ3NUmj6i0CVa_SsgPyxgEkk7f6xzRblAXE6x276v8C3u9000kjrsmUw7c3pBIiRZH6mCvajK7YOAVD-gVUYEE4WZ1PCMVINyC3CUeSO47dvGF6MDdMtQfGRFPwfdP91PE-AWNx2UxkgX0ttD-LgVytohp-aQwAzZf8QkP4c2KcpBdVPxXJlWTWoPjpWwBsWfiriJdsHAHggCwGz4kAKnsATANMhFx-led"/></div></header><main class="w-full pt-20 px-space-xl pb-space-2xl bg-surface"><div class="flex flex-col w-full">
+<script>
+    (function() {
+      // Sincronizar estado ativo na barra lateral global do shell
+      document.addEventListener('DOMContentLoaded', () => {
+        const navLinks = document.querySelectorAll('aside nav a');
+        navLinks.forEach(link => {
+          if (link.getAttribute('data-path') === 'configuracoes') {
+            link.classList.add('bg-primary-container', 'text-on-primary-container', 'font-medium');
+            link.classList.remove('text-on-surface-variant', 'hover:bg-surface-container-high');
+          } else {
+            link.classList.remove('bg-primary-container', 'text-on-primary-container', 'font-medium');
+            link.classList.add('text-on-surface-variant');
+          }
+        });
+      });
+    })();
+  </script>
+<!-- Page Header Subtly Anchored -->
+<header class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-caps text-label-caps text-primary tracking-wider uppercase">Sistema • Governança</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Configurações</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Personalize sua experiência operacional e fiscal no GO Finance.</p>
+</div>
+<!-- Quick Feedback Micro Status -->
+<div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-xs rounded-lg border border-outline-variant/30">
+<span class="inline-block w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Sincronização em tempo real ativa</span>
+</div>
+</header>
+<!-- Horizontal Tabs Bar -->
+<nav aria-label="Abas de configuração" class="flex items-center gap-space-xs border-b border-surface-variant/40 pb-space-xs mb-space-xl overflow-x-auto">
+<button class="relative px-space-md py-space-sm rounded-lg font-body-md text-body-md font-semibold text-on-surface bg-surface-container-high transition-colors" type="button">
+<span>Geral</span>
+<span class="absolute bottom-0 left-space-md right-space-md h-[2px] bg-primary rounded-full"></span>
+</button>
+<button class="px-space-md py-space-sm rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+      Contas e Pagamentos
+    </button>
+<button class="px-space-md py-space-sm rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+      Categorias
+    </button>
+<button class="px-space-md py-space-sm rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+      Preferências
+    </button>
+<button class="px-space-md py-space-sm rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+      Dados e Segurança
+    </button>
+</nav>
+<!-- Main Grid Layout (2 Balanced Operational Columns) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+<!-- LEFT COLUMN: Identidade & Preferências Gerais (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-xl">
+<!-- Card: Perfil -->
+<section class="bg-surface-container-low rounded-xl p-space-lg border border-outline-variant/30 flex flex-col gap-space-lg shadow-sm">
+<div class="flex items-start justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Perfil</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs">Gerencie seus dados de identificação e credenciais.</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">badge</span>
+</div>
+<!-- Avatar row -->
+<div class="flex items-center gap-space-md p-space-sm bg-surface-container rounded-lg">
+<div class="relative shrink-0">
+<img alt="Gustavo Oliveira" class="w-14 h-14 rounded-full object-cover ring-2 ring-primary/30" src="https://lh3.googleusercontent.com/aida/AEtjO1V-P_l0Z0aj06qTLYfG8xfUNyU-9ubbD_QLdAScXmnA4Od-nzF6KlWuUxe4uKi9x51RnnAvYWFNLiI9E4e3ejYZcHxXZqyqYWayxsdAAPK3cydUxJvchYV9-QvdMLaUueQ56sDN1RVfxeqC35DDopuOW58KNTZKWFv29EgAGKSewnRFEWUf8lsqHwZ2UCmkKa8h21ohSGJwd3VfEuv_8geLkOuajPtZMi3IsdNGv0KTKuamo27GtjCTJIg"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-primary ring-2 ring-surface-container-low"></span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-space-xs">
+<span class="font-body-md text-body-md font-medium text-on-surface truncate">Gustavo Oliveira</span>
+<span class="px-space-xs py-[2px] rounded text-[10px] uppercase font-semibold bg-primary/10 text-primary border border-primary/20">PRO</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Conta pessoal primária</span>
+</div>
+<button class="px-space-sm py-space-xs bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-body-sm text-body-sm rounded-lg border border-outline-variant/40 transition-colors shrink-0" type="button">
+            Alterar foto
+          </button>
+</div>
+<!-- Fields -->
+<form class="flex flex-col gap-space-md" onsubmit="event.preventDefault();">
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase" for="profile-name">Nome completo</label>
+<div class="relative flex items-center">
+<input class="w-full h-10 px-space-md bg-surface-container-lowest text-on-surface text-body-md font-body-md rounded-lg border border-outline-variant/40 focus:outline-none focus:border-primary transition-colors" id="profile-name" type="text" value="Gustavo Oliveira"/>
+<span class="material-symbols-outlined absolute right-space-md text-[18px] text-on-surface-variant/60 pointer-events-none">person</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase" for="profile-email">E-mail corporativo / pessoal</label>
+<div class="relative flex items-center">
+<input class="w-full h-10 px-space-md bg-surface-container-lowest text-on-surface text-body-md font-body-md rounded-lg border border-outline-variant/40 focus:outline-none focus:border-primary transition-colors" id="profile-email" type="email" value="gustavo@email.com"/>
+<span class="material-symbols-outlined absolute right-space-md text-[18px] text-on-surface-variant/60 pointer-events-none">mail</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Última alteração em 18 de Setembro</span>
+<button class="px-space-md py-space-xs bg-primary hover:bg-primary-fixed-dim text-on-primary font-body-md text-body-md font-semibold rounded-lg shadow-sm transition-all transform active:scale-95" type="button">
+              Salvar alterações
+            </button>
+</div>
+</form>
+</section>
+<!-- Card: Preferências Gerais -->
+<section class="bg-surface-container-low rounded-xl p-space-lg border border-outline-variant/30 flex flex-col gap-space-lg shadow-sm">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Preferências Gerais</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs">Formatação numérica, moeda base e padrões visuais.</p>
+</div>
+<div class="flex flex-col divide-y divide-surface-variant/30">
+<!-- Moeda -->
+<div class="flex items-center justify-between py-space-sm first:pt-0">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-on-surface">Moeda padrão</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Base para consolidação do portfólio</span>
+</div>
+<select class="h-9 px-space-md bg-surface-container-lowest text-on-surface text-body-sm font-body-sm rounded-lg border border-outline-variant/40 focus:outline-none focus:border-primary">
+<option selected="">R$ — Real brasileiro (BRL)</option>
+<option>$ — Dólar americano (USD)</option>
+<option>€ — Euro (EUR)</option>
+</select>
+</div>
+<!-- Formato Data -->
+<div class="flex items-center justify-between py-space-sm">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-on-surface">Formato de data</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Visualização em extratos e relatórios</span>
+</div>
+<span class="font-mono-metric-md text-mono-metric-md px-space-sm py-1 bg-surface-container text-on-surface rounded border border-outline-variant/30">
+              DD/MM/AAAA
+            </span>
+</div>
+<!-- Ciclo Contábil -->
+<div class="flex items-center justify-between py-space-sm">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-on-surface">Primeiro dia do mês fiscal</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Início do cálculo de orçamentos</span>
+</div>
+<select class="h-9 px-space-md bg-surface-container-lowest text-on-surface text-body-sm font-body-sm rounded-lg border border-outline-variant/40 focus:outline-none focus:border-primary">
+<option selected="">Dia 1</option>
+<option>Dia 5 (Dia útil salarial)</option>
+<option>Dia 10</option>
+<option>Dia 25</option>
+</select>
+</div>
+<!-- Tema -->
+<div class="flex items-center justify-between pt-space-sm">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-on-surface">Aparência da interface</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Otimizado para baixa reflexividade</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="flex items-center gap-space-2xs px-space-sm py-1 rounded bg-surface-container-high border border-outline-variant/40 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">dark_mode</span>
+<span>Tema escuro</span>
+</span>
+<span class="px-space-xs py-[2px] rounded text-[10px] font-semibold uppercase bg-primary-container/20 text-primary border border-primary/30">Padrão</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Card: Alertas & Orçamentos -->
+<section class="bg-surface-container-low rounded-xl p-space-lg border border-outline-variant/30 flex flex-col gap-space-md shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Alertas de Orçamento</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs">Notificações automáticas preventivas de estouro de teto.</p>
+</div>
+<!-- Switch Active -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="p-space-md bg-surface-container rounded-lg flex flex-col gap-space-sm border border-outline-variant/20">
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span>Sensibilidade do Alerta</span>
+<span class="font-mono-metric-md text-mono-metric-md font-semibold text-primary">80% do teto</span>
+</div>
+<input class="w-full accent-primary h-1 bg-surface-container-highest rounded-lg cursor-pointer" max="95" min="50" type="range" value="80"/>
+<div class="flex items-center gap-space-xs text-body-sm font-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-tertiary">info</span>
+<span>Avisos disparados via push e no feed de Insights assim que atingir R$ 8.640 de R$ 10.800.</span>
+</div>
+</div>
+</section>
+</div>
+<!-- RIGHT COLUMN: Contas, Categorias & Zona de Dados (7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-xl">
+<!-- Card: Contas e Pagamentos -->
+<section class="bg-surface-container-low rounded-xl p-space-lg border border-outline-variant/30 flex flex-col gap-space-md shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm border-b border-surface-variant/30 pb-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Contas e Pagamentos</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs">Gerencie os pontos de custódia, liquidez e cartões.</p>
+</div>
+<button class="flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-primary border border-primary/30 font-body-md text-body-md font-semibold transition-all" onclick="document.getElementById('drawer-account').classList.remove('translate-x-full'); document.getElementById('drawer-backdrop').classList.remove('hidden');" type="button">
+<span class="material-symbols-outlined text-[18px]">add_card</span>
+<span>Nova conta</span>
+</button>
+</div>
+<!-- Ledger Table List -->
+<div class="flex flex-col divide-y divide-surface-variant/30">
+<!-- Item 1: Nubank -->
+<div class="flex items-center justify-between py-space-sm hover:bg-surface-container/60 px-space-xs rounded-lg transition-colors group">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-[#820AD1]/20 border border-[#820AD1]/40 flex items-center justify-center text-[#A646EE]">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-body-md text-body-md font-medium text-on-surface">Nubank</span>
+<span class="px-space-xs py-[2px] rounded text-[10px] font-semibold bg-primary/10 text-primary border border-primary/20">Principal</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Conta digital • Nu Pagamentos S.A.</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="font-mono-metric-md text-mono-metric-md text-on-surface font-semibold">R$ 38.490,12</span>
+<button class="p-space-xs rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Item 2: Itaú / Conta Corrente -->
+<div class="flex items-center justify-between py-space-sm hover:bg-surface-container/60 px-space-xs rounded-lg transition-colors group">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-[#EC7000]/20 border border-[#EC7000]/40 flex items-center justify-center text-[#FF9E40]">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-on-surface">Conta Corrente (Itaú)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Conta bancária • Ag 4012 • CC 98231-2</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="font-mono-metric-md text-mono-metric-md text-on-surface font-semibold">R$ 9.150,00</span>
+<button class="p-space-xs rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Item 3: Dinheiro em Espécie -->
+<div class="flex items-center justify-between py-space-sm hover:bg-surface-container/60 px-space-xs rounded-lg transition-colors group">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high border border-outline-variant/40 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-on-surface">Dinheiro em Espécie</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Carteira física e reservas emergenciais</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="font-mono-metric-md text-mono-metric-md text-on-surface font-semibold">R$ 1.250,00</span>
+<button class="p-space-xs rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Card: Categorias com Segmented Control -->
+<section class="bg-surface-container-low rounded-xl p-space-lg border border-outline-variant/30 flex flex-col gap-space-md shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm border-b border-surface-variant/30 pb-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Categorias</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs">Estrutura taxonômica para classificação analítica.</p>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-md py-space-xs bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-body-sm text-body-sm rounded-lg border border-outline-variant/40 transition-colors flex items-center gap-space-2xs" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Nova categoria</span>
+</button>
+</div>
+</div>
+<!-- Inner Segmented Pill Selector -->
+<div class="flex items-center gap-space-xs bg-surface-container-lowest p-1 rounded-lg w-fit border border-outline-variant/20">
+<button class="px-space-md py-1 rounded font-body-sm text-body-sm font-semibold bg-surface-container-high text-on-surface" type="button">
+            Despesas (9)
+          </button>
+<button class="px-space-md py-1 rounded font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+            Receitas (4)
+          </button>
+</div>
+<!-- Categorias Grid/Pills -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-xs pt-space-xs">
+<!-- Item Alimentação -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container border border-outline-variant/20 hover:border-outline-variant/60 transition-colors">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-tertiary">restaurant</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Alimentação</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[18px]">more_horiz</span></button>
+</div>
+<!-- Item Transporte -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container border border-outline-variant/20 hover:border-outline-variant/60 transition-colors">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary">directions_car</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Transporte</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[18px]">more_horiz</span></button>
+</div>
+<!-- Item Moradia -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container border border-outline-variant/20 hover:border-outline-variant/60 transition-colors">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary">home</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Moradia</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[18px]">more_horiz</span></button>
+</div>
+<!-- Item Saúde -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container border border-outline-variant/20 hover:border-outline-variant/60 transition-colors">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-error">medical_services</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Saúde</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[18px]">more_horiz</span></button>
+</div>
+<!-- Item Educação -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container border border-outline-variant/20 hover:border-outline-variant/60 transition-colors">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed">school</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Educação</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[18px]">more_horiz</span></button>
+</div>
+<!-- Item Lazer -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container border border-outline-variant/20 hover:border-outline-variant/60 transition-colors">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-[#A646EE]">sports_esports</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Lazer</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[18px]">more_horiz</span></button>
+</div>
+<!-- Item Assinaturas -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container border border-outline-variant/20 hover:border-outline-variant/60 transition-colors">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary">subscriptions</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Assinaturas</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[18px]">more_horiz</span></button>
+</div>
+<!-- Item Compras -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container border border-outline-variant/20 hover:border-outline-variant/60 transition-colors">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-tertiary">shopping_bag</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Compras</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[18px]">more_horiz</span></button>
+</div>
+<!-- Item Outros -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container border border-outline-variant/20 hover:border-outline-variant/60 transition-colors">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">category</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Outros</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[18px]">more_horiz</span></button>
+</div>
+</div>
+</section>
+<!-- Card: Dados do Sistema & Zona de Perigo -->
+<section class="bg-surface-container-low rounded-xl p-space-lg border border-outline-variant/30 flex flex-col gap-space-lg shadow-sm">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Dados do Sistema & Portabilidade</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs">Baixe cópias de conformidade fiscal ou execute reset total do ledger.</p>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- Export Block -->
+<div class="flex items-center justify-between p-space-md bg-surface-container rounded-lg border border-outline-variant/20">
+<div class="flex items-center gap-space-md">
+<div class="w-9 h-9 rounded bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-on-surface">Exportar transações financeiras</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Planilha estruturada com metadados e tags (CSV/XLSX)</span>
+</div>
+</div>
+<button class="px-space-md py-space-xs bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-body-sm text-body-sm font-semibold rounded-lg border border-outline-variant/40 transition-colors flex items-center gap-space-2xs" type="button">
+<span>Exportar CSV</span>
+</button>
+</div>
+<!-- Danger Zone Block -->
+<div class="flex items-center justify-between p-space-md bg-error-container/10 rounded-lg border border-error/20">
+<div class="flex items-center gap-space-md">
+<div class="w-9 h-9 rounded bg-error/10 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-error">Zona de risco: Excluir todos os dados</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Apaga de forma irreversível histórico contábil e orçamentos configurados</span>
+</div>
+</div>
+<button class="px-space-md py-space-xs bg-error/10 hover:bg-error/20 text-error font-body-sm text-body-sm font-semibold rounded-lg border border-error/30 transition-colors" type="button">
+              Excluir dados
+            </button>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- LATERAL DRAWER: NOVA CONTA (Overlay & Panel) -->
+<div class="fixed inset-0 bg-surface-container-lowest/80 backdrop-blur-sm z-50 transition-opacity hidden" id="drawer-backdrop" onclick="document.getElementById('drawer-account').classList.add('translate-x-full'); this.classList.add('hidden');"></div>
+<aside class="fixed right-0 top-0 h-full w-full sm:w-[440px] bg-surface-container-lowest border-l border-outline-variant/30 shadow-2xl z-50 flex flex-col justify-between p-space-xl translate-x-full transition-transform duration-300 ease-in-out" id="drawer-account">
+<div class="flex flex-col gap-space-xl">
+<!-- Drawer Header -->
+<div class="flex items-start justify-between border-b border-surface-variant/40 pb-space-md">
+<div>
+<span class="font-label-caps text-label-caps text-primary uppercase">Cadastro • Ativos</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold mt-space-2xs">Nova conta</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Adicione uma conta corrente, carteira ou custódia de liquidez.</p>
+</div>
+<button class="p-space-xs rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" onclick="document.getElementById('drawer-account').classList.add('translate-x-full'); document.getElementById('drawer-backdrop').classList.add('hidden');" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Drawer Form Body -->
+<form class="flex flex-col gap-space-lg" onsubmit="event.preventDefault();">
+<!-- Field 1: Nome -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase" for="acc-name">Nome da conta</label>
+<input class="w-full h-10 px-space-md bg-surface-container text-on-surface text-body-md font-body-md rounded-lg border border-outline-variant/40 focus:outline-none focus:border-primary transition-colors placeholder:text-on-surface-variant/40" id="acc-name" placeholder="Ex: Nubank, Itaú ou Carteira Pessoal" type="text"/>
+</div>
+<!-- Field 2: Tipo -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase" for="acc-type">Tipo de conta</label>
+<div class="relative">
+<select class="w-full h-10 px-space-md bg-surface-container text-on-surface text-body-md font-body-md rounded-lg border border-outline-variant/40 focus:outline-none focus:border-primary transition-colors appearance-none" id="acc-type">
+<option>Conta digital</option>
+<option>Conta corrente tradicional</option>
+<option>Dinheiro (Espécie)</option>
+<option>Investimento / Corretora</option>
+<option>Outro</option>
+</select>
+<span class="material-symbols-outlined absolute right-space-md top-2.5 text-[18px] text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Field 3: Saldo Inicial -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase" for="acc-balance">Saldo inicial (R$)</label>
+<div class="relative flex items-center">
+<span class="absolute left-space-md font-mono-metric-md text-mono-metric-md text-on-surface-variant">R$</span>
+<input class="w-full h-10 pl-10 pr-space-md bg-surface-container text-on-surface font-mono-metric-md text-mono-metric-md rounded-lg border border-outline-variant/40 focus:outline-none focus:border-primary transition-colors" id="acc-balance" type="text" value="0,00"/>
+</div>
+</div>
+<!-- Field 4: Cor / Identificação -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Cor de identificação</label>
+<div class="flex items-center gap-space-sm pt-space-2xs">
+<button class="w-7 h-7 rounded-full bg-primary ring-2 ring-primary ring-offset-2 ring-offset-surface-container-lowest focus:outline-none" type="button"></button>
+<button class="w-7 h-7 rounded-full bg-[#820AD1] hover:opacity-80 transition-opacity focus:outline-none" type="button"></button>
+<button class="w-7 h-7 rounded-full bg-[#EC7000] hover:opacity-80 transition-opacity focus:outline-none" type="button"></button>
+<button class="w-7 h-7 rounded-full bg-[#0066FF] hover:opacity-80 transition-opacity focus:outline-none" type="button"></button>
+<button class="w-7 h-7 rounded-full bg-tertiary hover:opacity-80 transition-opacity focus:outline-none" type="button"></button>
+<button class="w-7 h-7 rounded-full bg-outline-variant hover:opacity-80 transition-opacity focus:outline-none" type="button"></button>
+</div>
+</div>
+<!-- Note banner -->
+<div class="p-space-sm rounded-lg bg-surface-container border border-outline-variant/20 flex gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary shrink-0 mt-0.5">verified_user</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">As contas adicionadas mantêm histórico isolado e compõem a liquidez líquida geral do dashboard.</span>
+</div>
+</form>
+</div>
+<!-- Drawer Footer Actions -->
+<div class="flex items-center justify-end gap-space-sm pt-space-lg border-t border-surface-variant/40">
+<button class="px-space-md py-space-xs rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" onclick="document.getElementById('drawer-account').classList.add('translate-x-full'); document.getElementById('drawer-backdrop').classList.add('hidden');" type="button">
+        Cancelar
+      </button>
+<button class="px-space-lg py-space-xs rounded-lg bg-primary hover:bg-primary-fixed-dim text-on-primary font-body-md text-body-md font-semibold transition-all transform active:scale-95 shadow-sm" onclick="document.getElementById('drawer-account').classList.add('translate-x-full'); document.getElementById('drawer-backdrop').classList.add('hidden');" type="button">
+        Adicionar conta
+      </button>
+</div>
+</aside>
+</div></main></div></body></html>
