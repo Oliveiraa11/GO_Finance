@@ -7,4 +7,6 @@ export const categories: Category[] = [
   { id: 'leisure', name: 'Lazer', color: '#f59e0b', icon: 'gamepad-2' },
   { id: 'health', name: 'Saúde', color: '#3b82f6', icon: 'heart-pulse' },
   { id: 'shopping', name: 'Compras', color: '#f87171', icon: 'shopping-bag' },
+  { id: 'housing', name: 'Moradia', color: '#a78bfa', icon: 'house' },
+  { id: 'income', name: 'Receitas', color: '#4ade80', icon: 'circle-dollar-sign' },
 ]
