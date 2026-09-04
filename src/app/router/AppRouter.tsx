@@ -2,6 +2,7 @@ import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { AppShell } from '../../components/layout/AppShell'
 import { DashboardPage } from '../../pages/Dashboard/DashboardPage'
 import { LoginPage } from '../../pages/Login/LoginPage'
+import { InsightsPage } from '../../pages/Insights/InsightsPage'
 import { PlaceholderPage } from '../../pages/Placeholder/PlaceholderPage'
 
 const router = createBrowserRouter([
@@ -13,7 +14,7 @@ const router = createBrowserRouter([
       { path: '/dashboard', element: <DashboardPage /> },
       { path: '/transacoes', element: <PlaceholderPage title="Transações" eyebrow="MOVIMENTAÇÕES" /> },
       { path: '/orcamentos', element: <PlaceholderPage title="Orçamentos" eyebrow="PLANEJAMENTO" /> },
-      { path: '/insights', element: <PlaceholderPage title="GO Insights" eyebrow="INTELIGÊNCIA FINANCEIRA" /> },
+      { path: '/insights', element: <InsightsPage /> },
       { path: '/configuracoes', element: <PlaceholderPage title="Configurações" eyebrow="SISTEMA • GOVERNANÇA" /> },
     ],
   },

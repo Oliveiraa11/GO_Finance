@@ -1,0 +1,33 @@
+import { ArrowDown, ArrowUp, CalendarDays, CircleDollarSign, Percent, PiggyBank, Sparkles, TrendingUp } from 'lucide-react'
+import { MonthlyInsightCard } from '../../components/finance/MonthlyInsightCard'
+import { Card } from '../../components/ui/Card'
+import { Progress } from '../../components/ui/Progress'
+import { insightCards, insightConclusion, monthlyComparison, monthlyInsightSummary, monthlyMetrics, spendingRanking } from '../../data/mocks'
+
+const metricIcons = { expenses: CircleDollarSign, savings: PiggyBank, rate: Percent }
+
+export function InsightsPage() {
+  return <div className="mx-auto max-w-[1440px] space-y-6">
+    <header className="flex items-start justify-between gap-5">
+      <div><div className="flex items-center gap-2"><h1 className="text-[28px] font-semibold tracking-tight">GO Insights</h1><span className="rounded-full bg-primary/10 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-primary">Inteligência Financeira</span></div><p className="mt-1 text-sm text-muted">Entenda o que está acontecendo com suas finanças de forma transparente e objetiva.</p></div>
+      <button className="focus-ring flex h-10 shrink-0 items-center gap-2 rounded-control border border-border bg-surface px-3 text-xs"><CalendarDays size={16} className="text-muted" />{monthlyInsightSummary.month}<span className="text-muted">⌄</span></button>
+    </header>
+
+    <section className="relative overflow-hidden rounded-card border border-border bg-surface p-8">
+      <div className="pointer-events-none absolute -right-24 -top-24 size-80 rounded-full bg-primary/5 blur-3xl" />
+      <div className="relative flex items-center justify-between gap-8">
+        <div className="max-w-3xl"><span className="inline-flex items-center gap-2 rounded-full bg-surface-interactive px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wide"><Sparkles size={13} className="text-primary" />{monthlyInsightSummary.label}</span><h2 className="mt-4 text-[28px] font-semibold tracking-tight">{monthlyInsightSummary.title}</h2><p className="mt-1 text-[15px] leading-6 text-muted">{monthlyInsightSummary.descriptionStart} <strong className="font-medium text-primary">{monthlyInsightSummary.expenseChange}</strong> {monthlyInsightSummary.descriptionMiddle} <strong className="font-medium text-primary">{monthlyInsightSummary.savingsRate}</strong> {monthlyInsightSummary.descriptionEnd}</p></div>
+        <div className="grid shrink-0 grid-cols-2 gap-3">{monthlyInsightSummary.highlights.map((item) => { const Direction = item.direction === 'down' ? ArrowDown : TrendingUp; return <div key={item.label} className="min-w-40 rounded-card bg-surface-interactive p-5"><p className="text-[11px] font-semibold uppercase tracking-wide text-muted">{item.label}</p><p className="mt-1 flex items-center gap-1 text-2xl font-semibold text-primary"><Direction size={20} /><span className="tabular">{item.value}</span></p><p className="tabular mt-1 text-[10px] text-muted">{item.helper}</p></div> })}</div>
+      </div>
+    </section>
+
+    <section className="grid grid-cols-3 gap-4">{monthlyMetrics.map((metric) => { const Icon = metricIcons[metric.icon]; const Direction = metric.direction === 'down' ? ArrowDown : ArrowUp; return <Card key={metric.label} className="flex min-h-36 flex-col justify-between p-5"><div className="flex items-center justify-between"><span className="text-[11px] font-semibold uppercase tracking-wide text-muted">{metric.label}</span><span className="grid size-9 place-items-center rounded-control bg-surface-interactive text-muted"><Icon size={17} /></span></div><div><strong className="tabular text-2xl font-semibold">{metric.value}</strong><p className="mt-2 flex items-center gap-2 text-[11px]"><span className="tabular inline-flex items-center gap-1 rounded-full bg-primary/10 px-2 py-1 font-medium text-primary"><Direction size={12} />{metric.change}</span><span className="text-muted">{metric.comparison}</span></p></div></Card> })}</section>
+
+    <section><h2 className="text-xl font-semibold">Principais insights</h2><p className="mt-0.5 text-[11px] text-muted">O que mais mudou nas suas finanças este mês.</p><div className="mt-4 grid grid-cols-3 gap-4">{insightCards.map((insight) => <MonthlyInsightCard key={insight.id} insight={insight} />)}</div></section>
+
+    <section className="grid grid-cols-12 items-start gap-6">
+      <Card className="col-span-7 p-6"><div className="flex items-start justify-between"><div><h2 className="text-xl font-semibold">Onde seu dinheiro foi</h2><p className="mt-1 text-[11px] text-muted">Ranking das principais categorias do mês</p></div><span className="tabular text-sm text-muted">{spendingRanking.total} Total</span></div><div className="mt-6 space-y-4">{spendingRanking.categories.map((category, index) => <div key={category.name}><div className="mb-2 flex items-center justify-between text-xs"><div className="flex items-center gap-3"><span className="tabular w-4 text-muted">{String(index + 1).padStart(2, '0')}</span><strong className="font-medium">{category.name}</strong></div><div className="tabular flex items-center gap-6"><span>{category.value}</span><span className={index === 0 ? 'w-9 text-right text-primary' : 'w-9 text-right text-muted'}>{category.percentage}%</span></div></div><Progress value={category.percentage} /></div>)}</div></Card>
+      <div className="col-span-5 space-y-4"><Card className="p-6"><div className="flex items-center justify-between"><h2 className="text-base font-semibold">Comparação com agosto</h2><span className="text-[10px] font-semibold uppercase tracking-wide text-muted">Variação real</span></div><div className="mt-4 divide-y divide-border">{monthlyComparison.map((item) => { const Direction = item.direction === 'down' ? ArrowDown : ArrowUp; return <div key={item.label} className="flex items-center justify-between py-3 first:pt-0 last:pb-0"><span className="flex items-center gap-2 text-xs"><i className="size-2 rounded-full bg-primary" />{item.label}</span><span className="tabular inline-flex items-center gap-1 rounded-full bg-primary/10 px-2 py-1 text-[11px] font-medium text-primary"><Direction size={12} />{item.value}</span></div> })}</div></Card><Card className="p-6"><div className="flex items-center gap-3"><span className="grid size-9 place-items-center rounded-control bg-primary/10 text-primary"><TrendingUp size={18} /></span><h2 className="text-base font-semibold">{insightConclusion.title}</h2></div><p className="mt-4 text-xs leading-5 text-muted">{insightConclusion.description}</p><p className="mt-4 flex items-center gap-2 text-[11px] font-medium text-primary"><i className="size-2 rounded-full bg-primary" />{insightConclusion.status}</p></Card></div>
+    </section>
+  </div>
+}
