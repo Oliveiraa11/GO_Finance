@@ -3,9 +3,9 @@ import { AppShell } from '../../components/layout/AppShell'
 import { DashboardPage } from '../../pages/Dashboard/DashboardPage'
 import { LoginPage } from '../../pages/Login/LoginPage'
 import { InsightsPage } from '../../pages/Insights/InsightsPage'
-import { PlaceholderPage } from '../../pages/Placeholder/PlaceholderPage'
 import { TransactionsPage } from '../../pages/Transactions/TransactionsPage'
 import { BudgetsPage } from '../../pages/Budgets/BudgetsPage'
+import { SettingsPage } from '../../pages/Settings/SettingsPage'
 
 const router = createBrowserRouter([
   { path: '/login', element: <LoginPage /> },
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
       { path: '/transacoes', element: <TransactionsPage /> },
       { path: '/orcamentos', element: <BudgetsPage /> },
       { path: '/insights', element: <InsightsPage /> },
-      { path: '/configuracoes', element: <PlaceholderPage title="Configurações" eyebrow="SISTEMA • GOVERNANÇA" /> },
+      { path: '/configuracoes', element: <SettingsPage /> },
     ],
   },
 ])
