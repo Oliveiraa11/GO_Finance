@@ -5,6 +5,7 @@ import { LoginPage } from '../../pages/Login/LoginPage'
 import { InsightsPage } from '../../pages/Insights/InsightsPage'
 import { PlaceholderPage } from '../../pages/Placeholder/PlaceholderPage'
 import { TransactionsPage } from '../../pages/Transactions/TransactionsPage'
+import { BudgetsPage } from '../../pages/Budgets/BudgetsPage'
 
 const router = createBrowserRouter([
   { path: '/login', element: <LoginPage /> },
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
       { path: '/', element: <Navigate to="/dashboard" replace /> },
       { path: '/dashboard', element: <DashboardPage /> },
       { path: '/transacoes', element: <TransactionsPage /> },
-      { path: '/orcamentos', element: <PlaceholderPage title="Orçamentos" eyebrow="PLANEJAMENTO" /> },
+      { path: '/orcamentos', element: <BudgetsPage /> },
       { path: '/insights', element: <InsightsPage /> },
       { path: '/configuracoes', element: <PlaceholderPage title="Configurações" eyebrow="SISTEMA • GOVERNANÇA" /> },
     ],

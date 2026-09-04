@@ -23,6 +23,9 @@ export const budgets: Budget[] = [
   { id: 'b1', categoryId: 'food', limit: 900, spent: 620, alertAt: 80 },
   { id: 'b2', categoryId: 'transport', limit: 600, spent: 310, alertAt: 80 },
   { id: 'b3', categoryId: 'leisure', limit: 500, spent: 420, alertAt: 80 },
+  { id: 'b4', categoryId: 'health', limit: 350, spent: 190, alertAt: 80 },
+  { id: 'b5', categoryId: 'education', limit: 700, spent: 550, alertAt: 80 },
+  { id: 'b6', categoryId: 'shopping', limit: 500, spent: 580, alertAt: 80 },
 ]
 
 export const insights: Insight[] = [
