@@ -6,11 +6,12 @@ import { InsightsPage } from '../../pages/Insights/InsightsPage'
 import { TransactionsPage } from '../../pages/Transactions/TransactionsPage'
 import { BudgetsPage } from '../../pages/Budgets/BudgetsPage'
 import { SettingsPage } from '../../pages/Settings/SettingsPage'
+import { PrivateRoute, PublicOnlyRoute } from '../../features/auth/AuthRoutes'
 
 const router = createBrowserRouter([
-  { path: '/login', element: <LoginPage /> },
+  { path: '/login', element: <PublicOnlyRoute><LoginPage /></PublicOnlyRoute> },
   {
-    element: <AppShell />,
+    element: <PrivateRoute><AppShell /></PrivateRoute>,
     children: [
       { path: '/', element: <Navigate to="/dashboard" replace /> },
       { path: '/dashboard', element: <DashboardPage /> },
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
       { path: '/configuracoes', element: <SettingsPage /> },
     ],
   },
+  { path: '*', element: <Navigate to="/" replace /> },
 ])
 
 export function AppRouter() {

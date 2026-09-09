@@ -2,6 +2,8 @@ import { createContext } from 'react'
 import type { PaymentMethod, SettingsCategory } from '../../data/mocks/settings'
 import type { Budget, Transaction } from '../../types/finance'
 import type { MonthlyPeriod } from '../../features/analytics/finance-selectors'
+import type { RemovalResult } from '../../features/finance/finance-integrity'
+import type { AuthResult } from '../../features/auth/auth-context'
 
 export interface UserProfile {
   name: string
@@ -31,11 +33,11 @@ export interface FinanceStoreValue {
   addBudget: (budget: Omit<Budget, 'id'>) => void
   addCategory: (category: Omit<SettingsCategory, 'id'>) => void
   updateCategory: (id: string, category: Partial<Omit<SettingsCategory, 'id'>>) => void
-  removeCategory: (id: string) => void
+  removeCategory: (id: string) => RemovalResult
   addPaymentMethod: (method: Omit<PaymentMethod, 'id'>) => void
   updatePaymentMethod: (id: string, method: Partial<Omit<PaymentMethod, 'id'>>) => void
-  removePaymentMethod: (id: string) => void
-  updateProfile: (profile: UserProfile) => void
+  removePaymentMethod: (id: string) => RemovalResult
+  updateProfile: (profile: UserProfile) => AuthResult
   setActivePeriod: (period: MonthlyPeriod) => void
 }
 

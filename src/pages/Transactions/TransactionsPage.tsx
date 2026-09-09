@@ -28,7 +28,12 @@ export function TransactionsPage() {
 
   function edit(transaction: Transaction) { openTransactionDrawer(transaction); setOpenMenu(null) }
   function duplicate(transaction: Transaction) { duplicateTransaction(transaction); setOpenMenu(null); setPage(1) }
-  function remove(id: string) { removeTransaction(id); setOpenMenu(null) }
+  function remove(id: string) {
+    const nextPageCount = Math.max(1, Math.ceil((filtered.length - 1) / PAGE_SIZE))
+    removeTransaction(id)
+    setOpenMenu(null)
+    setPage((currentPage) => Math.min(currentPage, nextPageCount))
+  }
 
   return <div className="space-y-4">
     <header className="flex items-center justify-between"><div><h1 className="text-[28px] font-semibold tracking-tight">Transações</h1><p className="mt-1 text-sm text-muted">Acompanhe todas as suas movimentações financeiras com precisão.</p></div><Button onClick={() => openTransactionDrawer()}><Plus size={17} />Nova transação</Button></header>

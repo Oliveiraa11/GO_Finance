@@ -5,12 +5,14 @@ import { Brand } from '../../components/layout/Brand'
 import { Button } from '../../components/ui/Button'
 import { Card } from '../../components/ui/Card'
 import { Input } from '../../components/ui/Input'
+import { useAuth } from '../../features/auth/useAuth'
 
 interface LoginErrors { email?: string; password?: string }
 interface SignupErrors extends LoginErrors { name?: string; confirmation?: string }
 
 export function LoginPage() {
   const navigate = useNavigate()
+  const { login, signup: createAccount } = useAuth()
   const [mode, setMode] = useState<'login' | 'signup'>('login')
   const [email, setEmail] = useState('gustavo@email.com')
   const [password, setPassword] = useState('go-finance')
@@ -27,7 +29,14 @@ export function LoginPage() {
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) nextErrors.email = 'Informe um e-mail válido.'
     if (!password) nextErrors.password = 'Informe sua senha.'
     setErrors(nextErrors)
-    if (Object.keys(nextErrors).length === 0) navigate('/dashboard')
+    if (Object.keys(nextErrors).length === 0) {
+      const result = login(email, password, remember)
+      if (!result.ok) {
+        setErrors({ [result.field]: result.message })
+        return
+      }
+      navigate('/dashboard')
+    }
   }
 
   function submitSignup(event: FormEvent<HTMLFormElement>) {
@@ -37,10 +46,18 @@ export function LoginPage() {
     if (!signup.email.trim()) nextErrors.email = 'Informe seu e-mail.'
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(signup.email)) nextErrors.email = 'Informe um e-mail válido.'
     if (!signup.password) nextErrors.password = 'Crie uma senha.'
+    else if (signup.password.length < 8) nextErrors.password = 'A senha deve ter pelo menos 8 caracteres.'
     if (!signup.confirmation) nextErrors.confirmation = 'Confirme sua senha.'
     else if (signup.password !== signup.confirmation) nextErrors.confirmation = 'As senhas não coincidem.'
     setSignupErrors(nextErrors)
-    if (Object.keys(nextErrors).length === 0) navigate('/dashboard')
+    if (Object.keys(nextErrors).length === 0) {
+      const result = createAccount({ name: signup.name, email: signup.email, password: signup.password })
+      if (!result.ok) {
+        setSignupErrors({ [result.field]: result.message })
+        return
+      }
+      navigate('/dashboard')
+    }
   }
 
   function updateSignup(field: keyof typeof signup, value: string) {
