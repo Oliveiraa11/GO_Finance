@@ -10,7 +10,7 @@ import type { Transaction } from '../../types/finance'
 const PAGE_SIZE = 7
 
 export function TransactionsPage() {
-  const { transactions, categories, paymentMethods, duplicateTransaction, removeTransaction } = useFinanceStore()
+  const { transactions, categories, paymentMethods, summary, duplicateTransaction, removeTransaction } = useFinanceStore()
   const [search, setSearch] = useState('')
   const [kind, setKind] = useState('all')
   const [category, setCategory] = useState('all')
@@ -25,8 +25,6 @@ export function TransactionsPage() {
   ), [transactions, search, kind, category, account])
   const pageCount = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE))
   const visible = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE)
-  const income = transactions.filter((t) => t.kind === 'income').reduce((sum, t) => sum + t.amount, 0)
-  const expenses = transactions.filter((t) => t.kind === 'expense').reduce((sum, t) => sum + t.amount, 0)
 
   function edit(transaction: Transaction) { openTransactionDrawer(transaction); setOpenMenu(null) }
   function duplicate(transaction: Transaction) { duplicateTransaction(transaction); setOpenMenu(null); setPage(1) }
@@ -35,9 +33,9 @@ export function TransactionsPage() {
   return <div className="space-y-4">
     <header className="flex items-center justify-between"><div><h1 className="text-[28px] font-semibold tracking-tight">Transações</h1><p className="mt-1 text-sm text-muted">Acompanhe todas as suas movimentações financeiras com precisão.</p></div><Button onClick={() => openTransactionDrawer()}><Plus size={17} />Nova transação</Button></header>
     <section className="grid grid-cols-3 gap-4 rounded-card bg-surface p-3">
-      <Summary label="Receitas do mês" value={income} icon={<ArrowDown size={17} />} tone="positive" badge="+12,4%" />
-      <Summary label="Despesas do mês" value={expenses} icon={<ArrowUp size={17} />} tone="negative" badge="-4,1%" />
-      <Summary label="Saldo líquido" value={income - expenses} icon={<Landmark size={17} />} tone="neutral" badge="Consolidado" />
+      <Summary label="Receitas do mês" value={summary.income} icon={<ArrowDown size={17} />} tone="positive" badge="Período ativo" />
+      <Summary label="Despesas do mês" value={summary.expenses} icon={<ArrowUp size={17} />} tone="negative" badge="Período ativo" />
+      <Summary label="Saldo líquido" value={summary.balance} icon={<Landmark size={17} />} tone="neutral" badge="Consolidado" />
     </section>
     <section className="flex items-center gap-3 rounded-card bg-surface p-3">
       <label className="relative min-w-64 max-w-xs flex-1"><Search size={17} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted" /><input value={search} onChange={(e) => { setSearch(e.target.value); setPage(1) }} placeholder="Buscar por descrição..." className="control pl-9" /></label>

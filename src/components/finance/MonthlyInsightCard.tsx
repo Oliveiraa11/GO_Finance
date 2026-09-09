@@ -1,5 +1,4 @@
-import { ArrowRight } from 'lucide-react'
-import type { MonthlyInsightCardData } from '../../data/mocks/insights'
+import { ArrowRight, type LucideIcon } from 'lucide-react'
 import { cn } from '../../lib/cn'
 import { Progress } from '../ui/Progress'
 
@@ -8,6 +7,24 @@ const toneStyles = {
   warning: { badge: 'bg-warning/15 text-warning', value: 'text-warning', progress: 'warning' as const },
   danger: { badge: 'bg-danger/15 text-danger', value: 'text-danger', progress: 'danger' as const },
   neutral: { badge: 'bg-surface-interactive text-text', value: 'text-muted', progress: 'primary' as const },
+}
+
+export interface MonthlyInsightCardData {
+  id: string
+  category: string
+  title: string
+  description: string
+  status: string
+  tone: keyof typeof toneStyles
+  icon: LucideIcon
+  meta?: string
+  detailLabel?: string
+  detailValue?: string
+  progress?: number
+  progressSecondary?: number
+  footerLeft?: string
+  footerRight?: string
+  action?: string
 }
 
 export function MonthlyInsightCard({ insight }: { insight: MonthlyInsightCardData }) {

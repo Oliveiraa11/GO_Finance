@@ -1,6 +1,7 @@
 import { createContext } from 'react'
 import type { PaymentMethod, SettingsCategory } from '../../data/mocks/settings'
-import type { Transaction } from '../../types/finance'
+import type { Budget, Transaction } from '../../types/finance'
+import type { MonthlyPeriod } from '../../features/analytics/finance-selectors'
 
 export interface UserProfile {
   name: string
@@ -17,14 +18,17 @@ export interface FinanceSummary {
 
 export interface FinanceStoreValue {
   transactions: Transaction[]
+  budgets: Budget[]
   categories: SettingsCategory[]
   paymentMethods: PaymentMethod[]
   profile: UserProfile
   summary: FinanceSummary
+  activePeriod: MonthlyPeriod
   addTransaction: (transaction: Omit<Transaction, 'id'>) => void
   updateTransaction: (id: string, transaction: Omit<Transaction, 'id'>) => void
   duplicateTransaction: (transaction: Transaction) => void
   removeTransaction: (id: string) => void
+  addBudget: (budget: Omit<Budget, 'id'>) => void
   addCategory: (category: Omit<SettingsCategory, 'id'>) => void
   updateCategory: (id: string, category: Partial<Omit<SettingsCategory, 'id'>>) => void
   removeCategory: (id: string) => void
@@ -32,6 +36,7 @@ export interface FinanceStoreValue {
   updatePaymentMethod: (id: string, method: Partial<Omit<PaymentMethod, 'id'>>) => void
   removePaymentMethod: (id: string) => void
   updateProfile: (profile: UserProfile) => void
+  setActivePeriod: (period: MonthlyPeriod) => void
 }
 
 export const FinanceStoreContext = createContext<FinanceStoreValue | null>(null)
